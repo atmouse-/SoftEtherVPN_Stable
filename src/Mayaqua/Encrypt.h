@@ -541,12 +541,6 @@ void AesEncrypt(void *dest, void *src, UINT size, AES_KEY_VALUE *k, void *ivec);
 void AesDecrypt(void *dest, void *src, UINT size, AES_KEY_VALUE *k, void *ivec);
 
 bool IsIntelAesNiSupported();
-void CheckIfIntelAesNiSupportedInit();
-
-#ifdef	USE_INTEL_AESNI_LIBRARY
-void AesEncryptWithIntel(void *dest, void *src, UINT size, AES_KEY_VALUE *k, void *ivec);
-void AesDecryptWithIntel(void *dest, void *src, UINT size, AES_KEY_VALUE *k, void *ivec);
-#endif	// USE_INTEL_AESNI_LIBRARY
 
 void OpenSSL_InitLock();
 void OpenSSL_FreeLock();
@@ -571,8 +565,6 @@ void HMacMd5(void *dst, void *key, UINT key_size, void *data, UINT data_size);
 
 BUF *EasyEncrypt(BUF *src_buf);
 BUF *EasyDecrypt(BUF *src_buf);
-
-void DisableIntelAesAccel();
 
 #ifdef	ENCRYPT_C
 // Inner function
